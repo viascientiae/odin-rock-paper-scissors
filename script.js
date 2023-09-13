@@ -23,6 +23,8 @@ function getComputerChoice() {
 
 }
 
+let playRoundResult = 0;
+
 function playRound(playerSelection, computerSelection) {
 
   function capitalizeFirstLetter(inputString) {
@@ -35,16 +37,19 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = capitalizeFirstLetter(playerSelection);
 
   if (playerSelection === computerSelection) {
+    playRoundResult = 0;
     return "The game is tied!"
   }
   else if ((playerSelection === "Rock" && computerSelection === "Scissors") || (playerSelection === "Paper" && computerSelection === "Rock") || (playerSelection === "Scissors" && computerSelection === "Paper")) {
+    playRoundResult = 1;
     return `You won! ${playerSelection} beats ${computerSelection}`;
   }
   else if ((playerSelection === "Scissors" && computerSelection === "Rock") || (playerSelection === "Rock" && computerSelection === "Paper") || (playerSelection === "Paper" && computerSelection === "Scissors")) {
+    playRoundResult = -1;
     return `You lose! ${computerSelection} beats ${playerSelection}`;
   }
   else {
-    return "Error! Please try again.";
+    return "Error! Invalid input";
   }
 
 }
