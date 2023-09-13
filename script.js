@@ -22,3 +22,29 @@ function getComputerChoice() {
   return computerChoice;
 
 }
+
+function playRound(playerSelection, computerSelection) {
+
+  function capitalizeFirstLetter(inputString) {
+    let firstLetter = inputString.charAt(0);
+    firstLetter = firstLetter.toUpperCase();
+    let capitalizeCase = firstLetter + inputString.slice(1).toLowerCase();
+    return capitalizeCase;
+  }
+
+  playerSelection = capitalizeFirstLetter(playerSelection);
+
+  if (playerSelection === computerSelection) {
+    return "The game is tied!"
+  }
+  else if ((playerSelection === "Rock" && computerSelection === "Scissors") || (playerSelection === "Paper" && computerSelection === "Rock") || (playerSelection === "Scissors" && computerSelection === "Paper")) {
+    return `You won! ${playerSelection} beats ${computerSelection}`;
+  }
+  else if ((playerSelection === "Scissors" && computerSelection === "Rock") || (playerSelection === "Rock" && computerSelection === "Paper") || (playerSelection === "Paper" && computerSelection === "Scissors")) {
+    return `You lose! ${computerSelection} beats ${playerSelection}`;
+  }
+  else {
+    return "Error! Please try again.";
+  }
+
+}
