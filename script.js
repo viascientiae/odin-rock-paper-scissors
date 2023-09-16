@@ -2,17 +2,16 @@ function getComputerChoice() {
 
   let computerChoice = Math.floor(Math.random() * 3);
 
-
   switch(computerChoice)
   {
     case 0:
-    computerChoice = "Rock";
+    return "Rock";
     break;
     case 1:
-    computerChoice = "Paper";
+    return "Paper";
     break;
     case 2:
-    computerChoice = "Scissors";
+    return "Scissors";
     break;
     default:
     console.log("Error");
