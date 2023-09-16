@@ -1,15 +1,26 @@
 const rockButton = document.getElementById('rockButton');
 const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
+const div = document.querySelector('div');
+
 
 rockButton.addEventListener("click", () => {
-  console.log(playRound("Rock", getComputerChoice()));
+  const result = playRound("Rock", getComputerChoice());
+  const p = document.createElement('p');
+  p.textContent = result;
+  div.appendChild(p);
 });
 paperButton.addEventListener("click", () => {
-  console.log(playRound("Paper", getComputerChoice()));
+  const result = playRound("Paper", getComputerChoice());
+  const p = document.createElement('p');
+  p.textContent = result;
+  div.appendChild(p);
 });
 scissorsButton.addEventListener("click", () => {
-  console.log(playRound("Scissors", getComputerChoice()));
+  const result = playRound("Scissors", getComputerChoice());
+  const p = document.createElement('p');
+  p.textContent = result;
+  div.appendChild(p);
 });
 
 function getComputerChoice() {
