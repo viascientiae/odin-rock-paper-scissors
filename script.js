@@ -1,3 +1,17 @@
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
+
+rockButton.addEventListener("click", () => {
+  console.log(playRound("Rock", getComputerChoice()));
+});
+paperButton.addEventListener("click", () => {
+  console.log(playRound("Paper", getComputerChoice()));
+});
+scissorsButton.addEventListener("click", () => {
+  console.log(playRound("Scissors", getComputerChoice()));
+});
+
 function getComputerChoice() {
 
   let computerChoice = Math.floor(Math.random() * 3);
@@ -47,9 +61,3 @@ function playRound(playerSelection, computerSelection) {
   }
 
 }
-
-function game() {
- return playRound(prompt("Play your move! Rock, Paper or Scissors?"), getComputerChoice());
-}
-
-console.log(game());
